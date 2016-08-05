@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @category_options = Category.all.map{|c| [ c.name, c.id ] }
     @tag_options = Tag.all.map{|t| [ t.name, t.id ] }
+    @post.comments.build
 
   end
 
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @category_options = Category.all.map{|c| [ c.name, c.id ] }
     @tag_options = Tag.all.map{|t| [ t.name, t.id ] }
-
+    @post.comments.build
   end
 
   def update
