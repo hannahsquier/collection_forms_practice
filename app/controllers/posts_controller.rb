@@ -12,7 +12,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(white_listed_post_params)
-    a;sfjadlf
     if @post.save
       flash[:success] = "its been created"
       redirect_to @post
@@ -34,6 +33,7 @@ class PostsController < ApplicationController
   end
 
   def update
+
     @post = Post.find(params[:id])
     if @post.update(white_listed_post_params)
       flash[:success] = "Update successful"

@@ -3,6 +3,11 @@
   <p><%= post.body %></p>
   <h5>Tags: <%= post.tags.map { |tag| tag.name }.join(", ") %></h5>
   <h5>Category: <%= post.category.name if post.category %></h5>
+
+  <hr>
+
+  <h5>Comments: <%= post.comments.map { |comment|comment.body }.join("\n")%></h5>
+
   <br>
 
   <%= link_to "View", post_path(post) %>
